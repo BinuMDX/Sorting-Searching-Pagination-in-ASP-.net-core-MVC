@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-striped" id="tblStudent">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+
+             <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr class="fs-9">
+                    <td>@obj.Name</td>
+                    <td>@obj.Position</td>
+                    <td>@obj.Location</td>
+                    <td>@obj.Age</td>
+                    <td>@obj.StartDate</td>
+                    <td>@obj.Salary</td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#tblStudent').DataTable({
+                "Paging":true,
+                "serverSide": true,
+                "processing": true,
+                "ajax": {
+                    "url": '@Url.Action("GetData", "Student")',
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "columns": [
+                    {
+                        "data": "Name",
+                        "autoWidth": true,
+                        "searchable": true
+                    },
+                    {
+                        "data": "Position",
+                        "autoWidth": true,
+                        "searchable": true
+                    },
+                    {
+                        "data": "Location",
+                        "autoWidth": true,
+                        "searchable": true
+                    },
+                    {
+                        "data": "Age",
+                        "autoWidth": true,
+                        "searchable": true
+                    }, {
+                        "data": "StartDateString",
+                        "autoWidth": true,
+                        "searchable": true
+                    }, {
+                        "data": "Salary",
+                        "autoWidth": true,
+                        "searchable": true
+                    },
+                ]
+            });
+        }); 
+    </script>
+}
