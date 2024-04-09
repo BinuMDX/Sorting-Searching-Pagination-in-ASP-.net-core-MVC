@@ -561,3 +561,4 @@ D:\Binari\Pagination\Pagination\Pagination\bin\Debug\net8.0\System.Web.WebPages.
 D:\Binari\Pagination\Pagination\Pagination\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
 D:\Binari\Pagination\Pagination\Pagination\bin\Debug\net8.0\System.Web.WebPages.dll
 D:\Binari\Pagination\Pagination\Pagination\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
+D:\Binari\Pagination\Pagination\Pagination\obj\Debug\net8.0\Pagination.sourcelink.json
